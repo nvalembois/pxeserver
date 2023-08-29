@@ -5,6 +5,7 @@ on:
 
 jobs:
   docker:
+    if: github.ref_type == 'tag' || !contains(fromJSON('["main", "master"]'), github.ref_name)
     runs-on: ubuntu-latest
     steps:
       - 
